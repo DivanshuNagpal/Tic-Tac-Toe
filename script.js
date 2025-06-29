@@ -10,6 +10,8 @@ let turnX = true;
 let count = 0;
 let isDraw = false;
 
+alert("Player 1 starts first as X.")
+
 const winPatterns = [
     [0, 1, 2],
     [0, 3, 6],
