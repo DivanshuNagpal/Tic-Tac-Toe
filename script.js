@@ -10,8 +10,6 @@ let turnX = true;
 let count = 0;
 let isDraw = false;
 
-alert("Player 1 starts first as X.")
-
 const winPatterns = [
     [0, 1, 2],
     [0, 3, 6],
@@ -115,7 +113,7 @@ const checkWinner = () => {
                 isDraw = false;
                 calculateScore(posVal1)
                 showWinner(posVal1);
-                return true;   
+                return true;
             }
         }
     }
@@ -124,3 +122,17 @@ const checkWinner = () => {
 
 rstBtn.addEventListener("click", resetBtn);
 newBtn.addEventListener("click", newGame);
+
+const showToast = (msgText) => {
+    const toast = document.getElementById("toast");
+    toast.innerText = msgText;
+    toast.classList.remove("hide");
+
+    setTimeout(() => {
+        toast.classList.add("hide");
+    }, 3000);
+};
+
+window.onload = () => {
+    showToast("Player 1 starts first as X");
+};
