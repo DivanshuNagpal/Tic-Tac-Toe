@@ -57,6 +57,9 @@ const newGame = () => {
 
 boxes.forEach((box) => {
     box.addEventListener("click", () => {
+
+        if (box.innerText !== "") return; 
+
         if (turnX) {
             box.innerText = "X";
             turnX = false;
@@ -72,8 +75,9 @@ boxes.forEach((box) => {
         if (count === 9 && !isWinner) {
             gameDraw();
         }
-    })
-})
+    });
+});
+
 
 const gameDraw = () => {
     isDraw = true;
